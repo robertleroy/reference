@@ -1,6 +1,8 @@
 # App Info
 
-<Window/>
+<!-- <Window/> -->
+
+`window info` under construction
 
 <style>
   pre {

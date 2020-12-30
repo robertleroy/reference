@@ -8,18 +8,46 @@
         innerHeight: 0,
         outerWidth: 0,
         outerHeight: 0,
+        screen: {
+          width: global.screen.width,
+          height: global.screen.height,
+          availWidth: global.screen.availWidth,
+          availWidth: global.screen.availHeight,
+          orientation: global.screen.orientation
+        },
       }
     },
     computed: {
-      window() {
-        return window
+      userAgent() {        
+        try {
+          return navigator.userAgent;
+        } catch (error) {
+          return;
+        }
       },
-      navigator() {
-        return navigator;
+      window() {       
+        try {
+          return window;
+        } catch (error) {
+          return;
+        }
       },
-      screen() {
-        return screen;
-      },           
+      devicePixelRatio() {       
+        try {
+          return window.devicePixelRatio;
+        } catch (error) {
+          return;
+        }
+      },
+      
+      navigator() {       
+        try {
+          return navigator;
+        } catch (error) {
+          return;
+        }
+      },
+               
     },
 
     methods: {
@@ -29,6 +57,7 @@
         this.outerWidth = window.outerWidth;
         this.outerHeight = window.outerHeight;
       },
+      
     },
 
     mounted() {
@@ -45,14 +74,14 @@
   <div id="App_Grid" v-cloak>
  
 <pre><code>
-{{navigator.userAgent}}
+{{userAgent}}
 
 window: {
   innerWidth: {{innerWidth}},
   innerHeight: {{innerHeight}},
   outerWidth: {{outerWidth}},
   outerHeight: {{outerHeight}},
-  devicePixelRatio: {{window.devicePixelRatio}}
+  devicePixelRatio: {{devicePixelRatio}}
 }
 
 screen: {
