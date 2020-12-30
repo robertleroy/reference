@@ -1,0 +1,20 @@
+{
+  "name": "reference",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "./deploy.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.7.1"
+  },
+  "dependencies": {
+    "lorem-ipsum": "^2.0.3",
+    "vuepress-plugin-code-copy": "^1.0.6"
+  }
+}

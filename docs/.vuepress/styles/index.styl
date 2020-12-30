@@ -1,0 +1,83 @@
+
+html
+  font-size 15px
+  @media (min-width: $MQMobileNarrow)
+    font-size 16px
+
+body 
+  font-size: inherit
+  height: 100vh
+
+h1
+  font-size: 1.65rem
+  
+h2
+  font-size: 1.35rem
+  
+h3
+  font-size: 1.2rem
+  
+#app, .theme-container
+  height: 100%
+  position: relative
+  
+  
+// main.page
+//   position: relative;
+//   top: 3.6rem;
+//   bottom: -3.6rem;
+//   right: 0;
+//   left: 0;
+//   border: 2px dotted cyan;
+
+
+.theme-container.custom-homepage-class {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  .hero img {
+    // max-height: 16em;
+  }
+
+  #main-title {
+    font-size 2em;
+  }
+
+  p.description {
+    font-size 1em;
+  }
+}
+
+
+
+/* fix width  & radius @ mobile */
+@media  (max-width: $MQMobileNarrow) {
+  .theme-code-group {
+    margin: 0 -1.5rem;
+  }  
+  .theme-code-group .theme-code-block {    
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .theme-code-group__nav { 
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+}
+
+/* space between tabs */
+.theme-code-group__ul {
+  gap: 1em;
+}
+
+/* move searchbox to end */
+.search-box {
+  order: 1;
+  margin-left: 2rem;
+}
+
+.code-copy svg {
+  top: 2rem !important;
+}
+
