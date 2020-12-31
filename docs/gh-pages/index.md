@@ -24,43 +24,115 @@ module.exports = {
 
 *adjust script as neccesary*
 
-<!-- ./deploy.sh -->
-``` js
-#!/usr/bin/env sh
+`<!-- ./deploy.sh -->`
 
-# abort on errors
-set -e
+<code-group>
+  <code-block title="Vue">
+  ``` bash
+  #!/usr/bin/env sh
 
-# build
-npm run docs:build
+  # abort on errors
+  set -e
 
-# navigate into the build output directory
-cd docs/.vuepress/dist
+  # build
+  npm run build
 
-git init
-git add -A
-git commit -m 'deploy'
+  # navigate into the build output directory
+  cd dist
 
-git push -f git@github.com:robertleroy/PROJECT_NAME.git master:gh-pages
+  # if you are deploying to a custom domain
+  # echo 'www.example.com' > CNAME
 
-cd -
-```
+  git init
+  git add -A
+  git commit -m 'deploy'
 
-``` json
-/* package.json */
-"scripts": {
+  git push -f git@github.com:robertleroy/reference.git master:gh-pages
+
+  cd -
+  ```
+
   
-  "deploy": "./deploy.sh"
-},
-```
+  ``` json
+  /* package.json */
+  "scripts": {
+    
+    "deploy": "./deploy.sh"
+  },
+  ```
 
-make command executable
-``` bash
-chmod +x ./deploy.sh
-```
+  make command executable
+  ``` bash
+  chmod +x ./deploy.sh
+  ```
 
-deploy
+  deploy
+  ``` bash
+  npm run deploy
+  ```
+  </code-block>
+
+  <code-block title="VuePress">
+  ``` bash
+  #!/usr/bin/env sh
+
+  # abort on errors
+  set -e
+
+  # build
+  npm run docs:build
+
+  # navigate into the build output directory
+  cd docs/.vuepress/dist
+
+  # if you are deploying to a custom domain
+  # echo 'www.example.com' > CNAME
+
+  git init
+  git add -A
+  git commit -m 'deploy'
+
+  # if you are deploying to https://<USERNAME>.github.io
+  # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+
+  # if you are deploying to https://<USERNAME>.github.io/<REPO>
+  git push -f git@github.com:robertleroy/reference.git master:gh-pages
+
+  cd -
+  ```
+
+  
+  ``` json
+  /* package.json */
+  "scripts": {
+    
+    "deploy": "./deploy.sh" ???
+    "deploy": "sh deploy.sh" ???
+  },
+  ```
+
+  make command executable
+  ``` bash
+  chmod +x ./deploy.sh ??
+  chmod +x deploy.sh ??
+  ```
+
+  deploy
+  ``` bash
+  npm run deploy
+  ```
+
+  </code-block>
+</code-group>
+
+
+
 ``` bash
+git add . && git commit -m 'update'
+git push
 npm run deploy
 ```
+
+
+
 

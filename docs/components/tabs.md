@@ -1,5 +1,129 @@
 # Tabs
 
+## Vue 3
+
+<Code-group>
+  <code-block title="Tabs">
+  ``` vue
+  <script>
+    import { ref, computed, provide, onMounted } from 'vue'
+    export default {
+      name: 'Tabs',
+      setup(_,  { slots }) {
+
+        const tabs = slots.default().map(item => item.props.title);
+        const selectedIndex = ref(0);
+        provide('selectedTitle', computed(() => tabs[selectedIndex.value]));
+
+        onMounted(() => {        
+          slots.default().forEach((el,i) => {
+            el.props.active !==undefined ? selectedIndex.value = i : '';
+          });
+        })
+
+        return { tabs, selectedIndex }
+      }    
+    };
+  </script>
+
+  <template>
+    <div class='tabs'>
+      <div class="tabBar">
+        <div class="tab" :key="i"
+          v-for="(tab,i) of tabs"
+          :class="{'selectedTab': i===selectedIndex}"
+          @click="selectedIndex=i">
+          <div class="tabTitle">{{tab}}</div>
+        </div>
+      </div>
+
+      <div class="tabPanel">
+        <slot>Tab Content</slot>
+      </div>
+      
+    </div>
+  </template>
+
+  <style scoped lang='scss'>
+    @import '../scss/imports';
+    
+    .tabs {
+      border: 1px dotted gray;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .tabBar { display: flex; }     
+    .tabBar  .tab {
+      padding: 0.5rem 1rem;
+      cursor: pointer;      
+    }
+    .tabBar .selectedTab { border-bottom: 1px solid #42b983; } 
+    .tabPanel { padding: 0.5rem 1rem; }
+  </style>
+
+  <!--
+  <tabs>
+    <tab-panel title="Panel 1" >
+      I am the First Panel!
+    </tab-panel>
+
+    <tab-panel title="Panel 2" active>
+      Whatever..
+    </tab-panel>
+
+    <tab-panel title="Panel 3" >
+      Ugh..
+    </tab-panel>
+  </tabs>
+  -->
+  ```
+  </code-block>
+  
+  <code-block title="TabPanel">
+  ``` vue
+  <script>
+    export default {
+      name: 'TabPanel',
+      props: {
+        title: { default: "tab" }
+      }, 
+      inject: ['selectedTitle'],
+      computed: {
+        activePanel() {
+          return this.title === this.selectedTitle.value;
+        }
+      },
+    };
+  </script>
+
+  <template>
+    <div v-if='activePanel'>
+      <slot>Test</slot>    
+    </div>
+  </template>
+  ```
+  </code-block>
+  
+  <code-block title="component">
+  ``` html
+  <tabs>
+    <tab-panel title="Panel 1" >
+      I am the First Panel!
+    </tab-panel>
+
+    <tab-panel title="Panel 2" active>
+      Whatever..
+    </tab-panel>
+
+    <tab-panel title="Panel 3" >
+      Ugh..
+    </tab-panel>
+  </tabs>
+  ```
+  </code-block>
+</code-group>
+
+## Vue 2
 <code-group>
   <code-block title="TabGroup">
   ``` vue

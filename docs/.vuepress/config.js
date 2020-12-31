@@ -10,7 +10,7 @@ module.exports = {
   description: 'Various Documentation',
   
   themeConfig: {
-    logo: '/scrolls-48.png',
+    logo: '/encyclopedia.png',
     smoothScroll: true,
     lastUpdated: 'Updated',
     // sidebarDepth: 2,
@@ -100,7 +100,9 @@ function componentsSidebar(groupA) {
         ['checkbox', 'Checkbox'],
         'svgIcon',
         'svg',
-        'tabs'
+        'tabs',
+        ['draglist','Draglist'],
+        ['snippets','Snippets'],
 
       ]
     },

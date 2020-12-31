@@ -2,7 +2,7 @@
 
 <code-group>
   <code-block title="Accordion">
-    ``` vue
+  ``` vue
     <script>
       export default {
         name: 'Accordion',
@@ -51,7 +51,7 @@
     </template>
 
     <style scoped lang='stylus'>
-      // @import '../scss/imports';
+      /* @import '../scss/imports'; */
       @import '../styl/imports';
 
       .accordion {
@@ -76,12 +76,10 @@
         }
       }
     </style>
-    ```
-  </code-block>
 
-  <code-block title="component">
-  ``` html
-  <accordion v-for="(item, i) of items" :key="i">
+
+    <!--
+    <accordion v-for="(item, i) of items" :key="i">
       <template #header>
         <div class="pnlHeader">
           {{item.title}}
@@ -94,6 +92,25 @@
         </div>
       </template>
     </accordion>
+    -->
+  ```
+  </code-block>
+
+  <code-block title="component">
+  ``` html
+  <accordion v-for="(item, i) of items" :key="i">
+    <template #header>
+      <div class="pnlHeader">
+        {{item.title}}
+      </div>
+    </template>
+
+    <template #panel>
+      <div class="pnlBody">
+        {{item.body}}
+      </div>
+    </template>
+  </accordion>
   ```
   </code-block>
 </code-group>

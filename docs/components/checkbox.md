@@ -1,7 +1,7 @@
 # Checkbox
 
 <code-group>
-  <code-block title="">
+  <code-block title="Checkbox">
   ``` vue
   <script>
     export default {
