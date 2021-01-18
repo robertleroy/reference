@@ -17,13 +17,12 @@
 
   <code-block title="Vite" active>
   ``` bash
-  /* Vite */  
-  npm init vite-app <project-name>
-  cd <project-name>
+  <!-- Vite -->  
+  npm init @vitejs/app <project-name>
   npm install
   npm run dev
   
-  /* Utilities */
+  <!-- Utilities -->
   npm install -D sass
   npm install -D stylus
   npm install vue-router@next
@@ -37,8 +36,8 @@
 
 <code-group>
   <code-block title="main.js">
-  ``` js
-  /* main.js */
+``` js
+  <!-- main.js -->
 
   import { createApp } from 'vue'
   import App from './App.vue'
@@ -46,17 +45,16 @@
   // import store from './store/store'
   // import './index.css'
 
-
   createApp(App)
-    // .use(router)
-    // .use(store)
-    .mount('#app')
-  ```
+  // .use(router)
+  // .use(store)
+  .mount('#app')
+```
   </code-block>
 
   <code-block title="App.vue" active>
   ``` vue
-  /* App.vue */
+  <!-- App.vue -->
 
   <script>
     export default {
@@ -90,8 +88,10 @@
     </div> 
   </template>
 
-  <style lang="scss">
-    @import './scss/baseline';
+  <!-- <style lang="scss">
+    @import './scss/baseline'; -->
+  <style lang="styl">
+    @import './styl/baseline';
 
     #appgrid {
       height: 100vh;
@@ -108,7 +108,8 @@
       grid-auto-flow: column;
       justify-content: space-between;
 
-      @include shadow(3);
+      /* @include shadow(3); */
+      include shadow(3);
     }
   </style>
   ```
