@@ -4,7 +4,7 @@
 
 1. Create project folder & initialize
 ``` bash
-/* ./projectName */
+# ./projectName
 npm init 
 ```
 

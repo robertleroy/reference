@@ -99,6 +99,34 @@ function vuepressSidebar(groupA) {
   ]
 }
 
+// function componentsSidebar2(groupA, groupB) {
+//   return [
+//     {
+//       title: groupA,
+//       // sidebarDepth: 2,
+//       collapsable: false,
+//       children: [
+//         ['', 'Accordion'],
+//         ['checkbox', 'Checkbox'],
+//         'svgIcon',
+//         'svg',
+//         'tabs',
+//         ['draglist','Draglist'],
+//         ['snippets','Snippets'],
+
+//       ]
+//     },
+//     {
+//       title: groupB,
+//       // sidebarDepth: 2,
+//       collapsable: false,
+//       children: [
+//         ['directives','Directives'],
+//       ]
+//     }
+//   ]
+// }
+
 function componentsSidebar(groupA) {
   return [
     {
@@ -112,8 +140,8 @@ function componentsSidebar(groupA) {
         'svg',
         'tabs',
         ['draglist','Draglist'],
-        ['snippets','Snippets'],
-
+        // ['snippets','Snippets'],
+        ['html','Html Components'],
       ]
     },
   ]

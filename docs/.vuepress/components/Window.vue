@@ -72,6 +72,7 @@
 
 <template>
   <div id="App_Grid" v-cloak>
+
  
 <pre><code>
 {{userAgent}}
