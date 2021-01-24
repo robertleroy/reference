@@ -11,14 +11,14 @@
 <code-group>
   <code-block title="Vue Cli" >
   ``` bash
-  vue create <project-name>
+  vue create .
   ```
   </code-block>
 
   <code-block title="Vite" active>
   ``` bash
   # Vite   
-  npm init @vitejs/app <project-name>
+  npm init @vitejs/app .
   npm install
   npm run dev
   
@@ -53,32 +53,29 @@
   </code-block>
 
   <code-block title="App.vue" active>
-  ``` vue
+``` vue
 <!--App.vue -->
-
 <script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      title: "Vue 3!"
+  export default {
+    name: 'App',
+    data() {
+      return {
+        title: "Vue 3!"
+      }
     }
   }
-}
 </script>
 
 <template>
-<div id="appgrid" v-cloak>
-  <header>
-    <h4>{{title}}</h4>
-    
-  </header>
+  <div id="appgrid" v-cloak>
+    <header>
+      <h4>{{title}}</h4>      
+    </header>
 
-  <main>
-    Main
-    
-  </main>
-</div> 
+    <main>
+      Main      
+    </main>
+  </div> 
 </template>
 
 <!--
@@ -86,31 +83,93 @@ export default {
 @import './scss/baseline';
 -->
 <style lang="stylus">
-@import './stylus/baseline';
+  @import './stylus/baseline';
 
-#appgrid {
-  height: 100vh;
-  
-}
+  #appgrid {
+    height: 100vh;    
+  }
 
-header, main {
-  padding: 1rem 2rem;
-}
+  header, main {
+    padding: 1rem 2rem;
+  }
 
-header {
-  position: sticky;
-  top: 0;
-  background: 
-    $backgroundColor;
+  header {
+    position: sticky;
+    top: 0;
+    background: 
+      $backgroundColor;
 
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
-  // @include shadow(3);
-  shadow(3);
-}
+    /* @include shadow(3); */
+    shadow(3);
+  }
 </style>
-  ```
+```
+  </code-block>
+
+  
+  <code-block title="/setup">
+``` vue
+<!--App.vue -->
+<script>
+  import { reactive } from 'vue'
+  export default {
+    name: 'App',
+    setup() {
+      const state = {
+        title: "Composition Api",
+      }
+
+      return {
+        state
+      }
+    }
+  }
+</script>
+
+<template>
+  <div id="appgrid" v-cloak>
+    <header>
+      <h4>{{state.title}}</h4>      
+    </header>
+
+    <main>
+      Main      
+    </main>
+  </div> 
+</template>
+
+<!--
+<style lang="scss">
+@import './scss/baseline';
+-->
+<style lang="stylus">
+  @import './stylus/baseline';
+
+  #appgrid {
+    height: 100vh;    
+  }
+
+  header, main {
+    padding: 1rem 2rem;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    background: 
+      $backgroundColor;
+
+    display: flex;
+    justify-content: space-between;
+
+    /* @include shadow(3); */
+    shadow(3);
+  }
+</style>
+```
   </code-block>
 </code-group>
 

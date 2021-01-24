@@ -2,7 +2,21 @@
 
 > *Boilerplate & snippets*
 
-<br><br>
+<br>
+
+## Todo
+- [ ] Todo page / db
+- [ ] shadow on scroll
+- [ ] useState()
+- [ ] composition api
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+
+<br>
 
 ## Dev Server
 ``` bash
@@ -31,6 +45,5 @@ sh './deploy.sh'
 <br>
 
 
-## Todo
-- [ ] Todo page
-- [ ] shadow on scroll
+
+
