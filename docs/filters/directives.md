@@ -55,7 +55,7 @@ app.directive('focus', {
   <code-block title="Vue 2">
   ``` js
   Vue.directive('highlight', {
-    bind(el, binding, vnode) {
+    bind(el, binding) {
       el.style.background = binding.value
     }
   })
@@ -67,7 +67,7 @@ app.directive('focus', {
   <code-block title="Vue 3">
   ``` js
   app.directive('highlight', {
-    beforeMount(el, binding, vnode) {
+    beforeMount(el, binding) {
       el.style.background = binding.value
     }
   })
@@ -112,4 +112,13 @@ export const copy = ("copy", {
 
 <p id="lorem">Lorem ipsum dolor ...</p> 
 */
+```
+
+## v-border
+``` js
+app.directive('border', (el, binding) => {
+  el.style.borderWidth = Object.keys(binding.modifiers)[0] || '1px'
+  el.style.borderStyle = binding.arg || 'solid';
+  el.style.borderColor = binding.value || 'currentColor';
+})
 ```

@@ -47,7 +47,7 @@
         box-shadow: none;
       }  
     }
-  }  
+  }
   ```
   </code-block>
 </code-group>

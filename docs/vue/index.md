@@ -54,62 +54,61 @@
 
   <code-block title="App.vue" active>
   ``` vue
- <!--App.vue -->
+<!--App.vue -->
 
 <script>
-  export default {
-    name: 'App',
-    data() {
-      return {
-        title: "Vue 3!"
-      }
+export default {
+  name: 'App',
+  data() {
+    return {
+      title: "Vue 3!"
     }
   }
+}
 </script>
 
 <template>
-  <div id="appgrid" v-cloak>
-    <header>
-      <h4>{{title}}</h4>
+<div id="appgrid" v-cloak>
+  <header>
+    <h4>{{title}}</h4>
+    
+  </header>
 
-      <!-- <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </div> -->
-    </header>
-
-    <main>
-      <!-- <router-view v-slot="{ Component }">
-        <transition name='fade' mode='out-in'>
-          <component :is="Component"/>
-        </transition>
-      </router-view> -->
-    </main>
-  </div> 
+  <main>
+    Main
+    
+  </main>
+</div> 
 </template>
 
-<!-- <style lang="scss">
-  @import './scss/baseline'; -->
+<!--
+<style lang="scss">
+@import './scss/baseline';
+-->
 <style lang="stylus">
-  @import './styl/baseline';
+@import './stylus/baseline';
 
-  #appgrid {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr;
-  }
+#appgrid {
+  height: 100vh;
+  
+}
 
-  header, main {
-    padding: 1rem 2rem;
-  }
+header, main {
+  padding: 1rem 2rem;
+}
 
-  header {
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
+header {
+  position: sticky;
+  top: 0;
+  background: 
+    $backgroundColor;
 
-    shadow(3);
-  }
+  display: flex;
+  justify-content: space-between;
+
+  // @include shadow(3);
+  shadow(3);
+}
 </style>
   ```
   </code-block>
