@@ -6,15 +6,10 @@
 
 ## Todo
 - [ ] Todo page / db
-- [ ] shadow on scroll
+- [x] shadow on scroll
 - [ ] useState()
 - [ ] composition api
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] item
 
 <br>
 
